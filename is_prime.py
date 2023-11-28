@@ -1,9 +1,10 @@
 def is_prime(n):
     if n <= 1:
         return False
-    for i in range(2, n // 2 + 1):
-        if n % i == 0:
-            return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0 or n % 5 == 0 or n % 7 == 0:
+        return False
     return True
 
 
@@ -16,3 +17,4 @@ def count_prime_range(start, stop):
 
 
 print(count_prime_range(30, 50))
+print(count_prime_range(-3, 3))
